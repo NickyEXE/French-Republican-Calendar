@@ -9,7 +9,7 @@
         android:id="@+id/widget_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="French Republican Date"
+        android:text="Loading..."
         android:textSize="16sp"
         android:textStyle="bold"
         android:gravity="center" />

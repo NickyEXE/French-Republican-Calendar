@@ -4,8 +4,9 @@
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <receiver
-            android:name="com.example.republican_calendar.RepublicanDateWidgetReceiver"
-            android:exported="false">
+            android:name="com.example.french_republican_calendar.RepublicanDateWidgetReceiver"
+            android:label="French Republican Calendar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
