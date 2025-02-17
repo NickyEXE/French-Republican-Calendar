@@ -1,9 +1,13 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_widgetkit/flutter_widgetkit.dart';
+import 'widgets/republican_calendar_widget.dart';
 
 void main() {
   runApp(const MyApp());
+  WidgetKit.setItem('republican_date', 'Loading...', 'group.com.example');
+  WidgetKit.reloadAllTimelines();
 }
 
 class MyApp extends StatefulWidget {
