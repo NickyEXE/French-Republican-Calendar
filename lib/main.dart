@@ -1,18 +1,15 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_widgetkit/flutter_widgetkit.dart';
 import 'widgets/republican_calendar_widget.dart';
 import 'dart:io' show Platform;
-import 'package:flutter_widgetkit/flutter_widgetkit.dart';
 
 void main() {
   runApp(const MyApp());
 
-  if (Platform.isIOS) {
-    WidgetKit.setItem('republican_date', 'Loading...', 'group.com.example');
-    WidgetKit.reloadAllTimelines();
-  }
+  // if (Platform.isIOS) {
+  //   WidgetKit.setItem('republican_date', 'Loading...', 'group.com.example');
+  //   WidgetKit.reloadAllTimelines();
+  // }
 }
 
 class MyApp extends StatefulWidget {
@@ -28,35 +25,22 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    loadRepublicanDate();
+    _loadRepublicanDate();
   }
 
-  Future<void> loadRepublicanDate() async {
-    String jsonString = await rootBundle.loadString('assets/months.json');
-    List<dynamic> months = jsonDecode(jsonString);
+  void _loadRepublicanDate() {
     DateTime today = DateTime.now();
+    RepublicanDate republicanDateObj = RepublicanDate.fromGregorian(today);
 
-    for (var month in months) {
-      for (var day in month['days']) {
-        if (day['gregorianEquivalent'] == '${today.day} ${_getMonthAbbreviation(today.month)}') {
-          setState(() {
-            republicanDate = "${day['day']} ${month['monthName']} - ${day['dedicatedToEng']}";
-          });
-          return;
-        }
-      }
-    }
     setState(() {
-      republicanDate = "Date Not Found";
+      republicanDate = "${republicanDateObj.getDayName()}, ${republicanDateObj.getDay()} ${republicanDateObj.getMonthName()} ${republicanDateObj.getYearArabic()}";
     });
-  }
 
-  String _getMonthAbbreviation(int month) {
-    const monthNames = [
-      "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-    ];
-    return monthNames[month - 1];
+    // Update home screen widget data
+    // if (Platform.isIOS) {
+    //   WidgetKit.setItem('republican_date', republicanDate, 'group.com.example');
+    //   WidgetKit.reloadAllTimelines();
+    // }
   }
 
   @override
@@ -68,6 +52,11 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const Text(
+                "Test",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
               const Text(
                 "Today in the Republican Calendar:",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),

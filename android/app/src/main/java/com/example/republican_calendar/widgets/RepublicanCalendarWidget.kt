@@ -37,6 +37,15 @@ class RepublicanCalendarWidget : AppWidgetProvider() {
         val today = Calendar.getInstance()
         val day = today.get(Calendar.DAY_OF_MONTH)
         val month = today.get(Calendar.MONTH) + 1  // Months are 0-based in Java
+        val year = today.get(Calendar.YEAR)
+
+        Log.d("Widget", "📅 Today's Gregorian Date: $day ${getMonthAbbreviation(month)}, $year")
+
+        val republicanYear = calculateRepublicanYear(today)
+        val isLeapYear = isRepublicanLeapYear(republicanYear)
+
+        Log.d("Widget", "📅 Republican Year: Year $republicanYear")
+        Log.d("Widget", "⚡ Is Leap Year: $isLeapYear")
 
         try {
             val inputStream: InputStream = context!!.assets.open("months.json")
@@ -49,16 +58,36 @@ class RepublicanCalendarWidget : AppWidgetProvider() {
 
                 for (j in 0 until daysArray.length()) {
                     val dayObject = daysArray.getJSONObject(j)
+
+                    // Handle leap year special day (Jour de la Révolution)
+                    if (isLeapYear && day == 22 && month == 9 && dayObject.getString("day") == "Jour de la Révolution") {
+                        return "Jour de la Révolution - Year $republicanYear"
+                    }
+
                     if (dayObject.getString("gregorianEquivalent") == "$day ${getMonthAbbreviation(month)}") {
                         Log.d("Widget", "📅 Found Republican Date: ${dayObject.getString("day")} ${monthObject.getString("monthName")}")
-                        return "${dayObject.getString("day")} ${monthObject.getString("monthName")}"
+                        return "${dayObject.getString("day")} ${monthObject.getString("monthName")} - Year $republicanYear"
                     }
                 }
             }
         } catch (e: Exception) {
-            Log.e("Widget", "Error loading the date: ${e.message}")
+            Log.e("Widget", "Error reading months.json: ${e.message}")
         }
         return "Date Not Available"
+    }
+
+    private fun calculateRepublicanYear(today: Calendar): Int {
+        val year = today.get(Calendar.YEAR)
+        val month = today.get(Calendar.MONTH) + 1
+        val day = today.get(Calendar.DAY_OF_MONTH)
+
+        val republicanYear = year - 1792 + if (month > 9 || (month == 9 && day >= 22)) 1 else 0
+        return republicanYear
+    }
+
+    private fun isRepublicanLeapYear(year: Int): Boolean {
+        // Leap year occurs if (year + 1) is divisible by 4
+        return (year + 1) % 4 == 0
     }
 
     private fun getMonthAbbreviation(month: Int): String {
