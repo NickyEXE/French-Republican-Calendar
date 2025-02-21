@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widgetkit/flutter_widgetkit.dart';
 import 'widgets/republican_calendar_widget.dart';
 import 'decimal_time.dart';
+import 'dart:async';
 import 'dart:io' show Platform;
 
 void main() {
@@ -20,15 +21,43 @@ class MyApp extends StatefulWidget {
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   late String republicanDate = "Loading...";
   late String decimalTime = "Loading...";
+  Timer? _timer;
 
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     _loadRepublicanDate();
-    _loadDecimalTime();
+    _startTimer();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    _stopTimer();
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      _startTimer();
+    } else if (state == AppLifecycleState.paused) {
+      _stopTimer();
+    }
+  }
+
+  void _startTimer() {
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      _loadDecimalTime();
+    });
+  }
+
+  void _stopTimer() {
+    _timer?.cancel();
   }
 
   void _loadRepublicanDate() {
