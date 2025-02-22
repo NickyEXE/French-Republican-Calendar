@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_widgetkit/flutter_widgetkit.dart';
 import 'package:intl/intl.dart';
+import 'dart:convert';
 
 // This code lovingly ripped and converted to Dart from: https://github.com/dekadans/repcal/blob/main/repcal/RepublicanDate.py
 class RepublicanCalendarWidget extends StatefulWidget {
@@ -19,9 +21,9 @@ class _RepublicanCalendarWidgetState extends State<RepublicanCalendarWidget> {
     _loadRepublicanDate();
   }
 
-  void _loadRepublicanDate() {
+  void _loadRepublicanDate() async {
     DateTime today = DateTime.now();
-    RepublicanDate republicanDateObj = RepublicanDate.fromGregorian(today);
+    RepublicanDate republicanDateObj = await RepublicanDate.fromGregorian(today);
 
     setState(() {
       republicanDate = "${republicanDateObj.getDayName()}, ${republicanDateObj.getDay()} ${republicanDateObj.getMonthName()} ${republicanDateObj.getYearArabic()}";
@@ -47,7 +49,7 @@ class RepublicanDate {
   static const List<String> months = [
     'Vendémiaire', 'Brumaire', 'Frimaire', 'Nivôse', 'Pluviôse', 'Ventôse',
     'Germinal', 'Floréal', 'Prairial', 'Messidor', 'Thermidor', 'Fructidor',
-    'Jour complémentaire'
+    'Sansculottides'
   ];
 
   static const List<String> days = [
@@ -55,12 +57,16 @@ class RepublicanDate {
     'Sextidi', 'Septidi', 'Octidi', 'Nonidi', 'Décadi'
   ];
 
+  static Map<String, Map<String, String>> dedications = {};
+
   final int year;
   final int monthIndex;
   final int monthDayIndex;
   final int weekDayIndex;
+  final String dedicatedToFr;
+  final String dedicatedToEng;
 
-  RepublicanDate(this.year, this.monthIndex, this.monthDayIndex)
+  RepublicanDate(this.year, this.monthIndex, this.monthDayIndex, this.dedicatedToFr, this.dedicatedToEng)
       : weekDayIndex = monthDayIndex % 10;
 
   String getYearArabic() => year.toString();
@@ -71,7 +77,18 @@ class RepublicanDate {
 
   int getDay() => monthDayIndex + 1;
 
-  static RepublicanDate fromGregorian(DateTime dateToConvert) {
+  // yanked these bad boys from Wikipedia
+  static Future<void> loadDedications() async {
+    if (dedications.isEmpty) {
+      String jsonString = await rootBundle.loadString('assets/dedications.json');
+      Map<String, dynamic> jsonData = json.decode(jsonString);
+      dedications = jsonData.map((key, value) => MapEntry(key, Map<String, String>.from(value as Map)));
+    }
+  }
+
+  static Future<RepublicanDate> fromGregorian(DateTime dateToConvert) async {
+    await loadDedications();
+
     DateTime start = DateTime(1792, 9, 22);
 
     if (dateToConvert.isBefore(start)) {
@@ -99,7 +116,10 @@ class RepublicanDate {
     int month = dayInYear ~/ 30;
     int dayInMonth = dayInYear % 30;
 
-    return RepublicanDate(year, month, dayInMonth);
+    String key = "${dayInMonth + 1}_${months[month]}";
+    Map<String, String> dedication = dedications[key] ?? {"fr": "Unknown", "eng": "Unknown"};
+
+    return RepublicanDate(year, month, dayInMonth, dedication["fr"]!, dedication["eng"]!);
   }
 
   static bool isLeapYear(int year) {

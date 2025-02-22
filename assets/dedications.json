@@ -1,0 +1,1466 @@
+{
+  "1_Sansculottides": {
+    "fr": "Vertu",
+    "eng": "Virtue"
+  },
+  "2_Sansculottides": {
+    "fr": "Génie",
+    "eng": "Genius"
+  },
+  "3_Sansculottides": {
+    "fr": "Travail",
+    "eng": "Labor"
+  },
+  "4_Sansculottides": {
+    "fr": "Opinion",
+    "eng": "Convictions"
+  },
+  "5_Sansculottides": {
+    "fr": "Récompenses",
+    "eng": "Honors"
+  },
+  "6_Sansculottides": {
+    "fr": "Révolution",
+    "eng": "Revolution"
+  },
+  "1_Vendémiaire": {
+    "fr": "Raisin",
+    "eng": "Grape"
+  },
+  "2_Vendémiaire": {
+    "fr": "Safran",
+    "eng": "Saffron"
+  },
+  "3_Vendémiaire": {
+    "fr": "Châtaigne",
+    "eng": "Chestnut"
+  },
+  "4_Vendémiaire": {
+    "fr": "Colchique",
+    "eng": "Autumn Crocus"
+  },
+  "5_Vendémiaire": {
+    "fr": "Cheval",
+    "eng": "Horse"
+  },
+  "6_Vendémiaire": {
+    "fr": "Balsamine",
+    "eng": "Impatiens"
+  },
+  "7_Vendémiaire": {
+    "fr": "Carotte",
+    "eng": "Carrot"
+  },
+  "8_Vendémiaire": {
+    "fr": "Amaranthe",
+    "eng": "Amaranth"
+  },
+  "9_Vendémiaire": {
+    "fr": "Panais",
+    "eng": "Parsnip"
+  },
+  "10_Vendémiaire": {
+    "fr": "Cuve",
+    "eng": "Vat"
+  },
+  "11_Vendémiaire": {
+    "fr": "Pomme de terre",
+    "eng": "Potato"
+  },
+  "12_Vendémiaire": {
+    "fr": "Immortelle",
+    "eng": "Strawflower"
+  },
+  "13_Vendémiaire": {
+    "fr": "Potiron",
+    "eng": "Winter squash"
+  },
+  "14_Vendémiaire": {
+    "fr": "Réséda",
+    "eng": "Mignonette"
+  },
+  "15_Vendémiaire": {
+    "fr": "Âne",
+    "eng": "Donkey"
+  },
+  "16_Vendémiaire": {
+    "fr": "Belle de nuit",
+    "eng": "Four o'clock flower"
+  },
+  "17_Vendémiaire": {
+    "fr": "Citrouille",
+    "eng": "Pumpkin"
+  },
+  "18_Vendémiaire": {
+    "fr": "Sarrasin",
+    "eng": "Buckwheat"
+  },
+  "19_Vendémiaire": {
+    "fr": "Tournesol",
+    "eng": "Sunflower"
+  },
+  "20_Vendémiaire": {
+    "fr": "Pressoir",
+    "eng": "Wine-Press"
+  },
+  "21_Vendémiaire": {
+    "fr": "Chanvre",
+    "eng": "Hemp"
+  },
+  "22_Vendémiaire": {
+    "fr": "Pêche",
+    "eng": "Peach"
+  },
+  "23_Vendémiaire": {
+    "fr": "Navet",
+    "eng": "Turnip"
+  },
+  "24_Vendémiaire": {
+    "fr": "Amaryllis",
+    "eng": "Amaryllis"
+  },
+  "25_Vendémiaire": {
+    "fr": "Bœuf",
+    "eng": "Ox"
+  },
+  "26_Vendémiaire": {
+    "fr": "Aubergine",
+    "eng": "Eggplant"
+  },
+  "27_Vendémiaire": {
+    "fr": "Piment",
+    "eng": "Chili pepper"
+  },
+  "28_Vendémiaire": {
+    "fr": "Tomate",
+    "eng": "Tomato"
+  },
+  "29_Vendémiaire": {
+    "fr": "Orge",
+    "eng": "Barley"
+  },
+  "30_Vendémiaire": {
+    "fr": "Tonneau",
+    "eng": "Barrel"
+  },
+  "1_Brumaire": {
+    "fr": "Pomme",
+    "eng": "Apple"
+  },
+  "2_Brumaire": {
+    "fr": "Céleri",
+    "eng": "Celery"
+  },
+  "3_Brumaire": {
+    "fr": "Poire",
+    "eng": "Pear"
+  },
+  "4_Brumaire": {
+    "fr": "Betterave",
+    "eng": "Beetroot"
+  },
+  "5_Brumaire": {
+    "fr": "Oie",
+    "eng": "Goose"
+  },
+  "6_Brumaire": {
+    "fr": "Héliotrope",
+    "eng": "Heliotrope"
+  },
+  "7_Brumaire": {
+    "fr": "Figue",
+    "eng": "Common fig"
+  },
+  "8_Brumaire": {
+    "fr": "Scorsonère",
+    "eng": "Black Salsify"
+  },
+  "9_Brumaire": {
+    "fr": "Alisier",
+    "eng": "Chequer Tree"
+  },
+  "10_Brumaire": {
+    "fr": "Charrue",
+    "eng": "Plough"
+  },
+  "11_Brumaire": {
+    "fr": "Salsifis",
+    "eng": "Salsify"
+  },
+  "12_Brumaire": {
+    "fr": "Mâcre",
+    "eng": "Water caltrop"
+  },
+  "13_Brumaire": {
+    "fr": "Topinambour",
+    "eng": "Jerusalem artichoke"
+  },
+  "14_Brumaire": {
+    "fr": "Endive",
+    "eng": "Endive"
+  },
+  "15_Brumaire": {
+    "fr": "Dindon",
+    "eng": "Turkey"
+  },
+  "16_Brumaire": {
+    "fr": "Chervis",
+    "eng": "Skirret"
+  },
+  "17_Brumaire": {
+    "fr": "Cresson",
+    "eng": "Watercress"
+  },
+  "18_Brumaire": {
+    "fr": "Dentelaire",
+    "eng": "Leadworts"
+  },
+  "19_Brumaire": {
+    "fr": "Grenade",
+    "eng": "Pomegranate"
+  },
+  "20_Brumaire": {
+    "fr": "Herse",
+    "eng": "Harrow"
+  },
+  "21_Brumaire": {
+    "fr": "Bacchante",
+    "eng": "Baccharis"
+  },
+  "22_Brumaire": {
+    "fr": "Azerole",
+    "eng": "Azarole"
+  },
+  "23_Brumaire": {
+    "fr": "Garance",
+    "eng": "Madder"
+  },
+  "24_Brumaire": {
+    "fr": "Orange",
+    "eng": "Orange"
+  },
+  "25_Brumaire": {
+    "fr": "Faisan",
+    "eng": "Pheasant"
+  },
+  "26_Brumaire": {
+    "fr": "Pistache",
+    "eng": "Pistachio Nut"
+  },
+  "27_Brumaire": {
+    "fr": "Macjonc",
+    "eng": "Tuberous pea"
+  },
+  "28_Brumaire": {
+    "fr": "Coing",
+    "eng": "Quince"
+  },
+  "29_Brumaire": {
+    "fr": "Cormier",
+    "eng": "Service tree"
+  },
+  "30_Brumaire": {
+    "fr": "Rouleau",
+    "eng": "Roller"
+  },
+  "1_Frimaire": {
+    "fr": "Raiponce",
+    "eng": "Rampion"
+  },
+  "2_Frimaire": {
+    "fr": "Turneps",
+    "eng": "Cattle turnip"
+  },
+  "3_Frimaire": {
+    "fr": "Chicorée",
+    "eng": "Chicory"
+  },
+  "4_Frimaire": {
+    "fr": "Nèfle",
+    "eng": "Medlar"
+  },
+  "5_Frimaire": {
+    "fr": "Cochon",
+    "eng": "Pig"
+  },
+  "6_Frimaire": {
+    "fr": "Mâche",
+    "eng": "Lamb's lettuce"
+  },
+  "7_Frimaire": {
+    "fr": "Chou-fleur",
+    "eng": "Cauliflower"
+  },
+  "8_Frimaire": {
+    "fr": "Miel",
+    "eng": "Honey"
+  },
+  "9_Frimaire": {
+    "fr": "Genièvre",
+    "eng": "Juniper"
+  },
+  "10_Frimaire": {
+    "fr": "Pioche",
+    "eng": "Pickaxe"
+  },
+  "11_Frimaire": {
+    "fr": "Cire",
+    "eng": "Wax"
+  },
+  "12_Frimaire": {
+    "fr": "Raifort",
+    "eng": "Horseradish"
+  },
+  "13_Frimaire": {
+    "fr": "Cèdre",
+    "eng": "Cedar tree"
+  },
+  "14_Frimaire": {
+    "fr": "Sapin",
+    "eng": "Fir"
+  },
+  "15_Frimaire": {
+    "fr": "Chevreuil",
+    "eng": "Roe deer"
+  },
+  "16_Frimaire": {
+    "fr": "Ajonc",
+    "eng": "Gorse"
+  },
+  "17_Frimaire": {
+    "fr": "Cyprès",
+    "eng": "Cypress Tree"
+  },
+  "18_Frimaire": {
+    "fr": "Lierre",
+    "eng": "Ivy"
+  },
+  "19_Frimaire": {
+    "fr": "Sabine",
+    "eng": "Savin Juniper"
+  },
+  "20_Frimaire": {
+    "fr": "Hoyau",
+    "eng": "Fork hoe"
+  },
+  "21_Frimaire": {
+    "fr": "Érable à sucre",
+    "eng": "Sugar Maple"
+  },
+  "22_Frimaire": {
+    "fr": "Bruyère",
+    "eng": "Heather"
+  },
+  "23_Frimaire": {
+    "fr": "Roseau",
+    "eng": "Reed plant"
+  },
+  "24_Frimaire": {
+    "fr": "Oseille",
+    "eng": "Sorrel"
+  },
+  "25_Frimaire": {
+    "fr": "Grillon",
+    "eng": "Cricket"
+  },
+  "26_Frimaire": {
+    "fr": "Pignon",
+    "eng": "Pine nut"
+  },
+  "27_Frimaire": {
+    "fr": "Liège",
+    "eng": "Cork"
+  },
+  "28_Frimaire": {
+    "fr": "Truffe",
+    "eng": "Truffle"
+  },
+  "29_Frimaire": {
+    "fr": "Olive",
+    "eng": "Olive"
+  },
+  "30_Frimaire": {
+    "fr": "Pelle",
+    "eng": "Shovel"
+  },
+  "1_Nivôse": {
+    "fr": "Tourbe",
+    "eng": "Peat"
+  },
+  "2_Nivôse": {
+    "fr": "Houille",
+    "eng": "Coal"
+  },
+  "3_Nivôse": {
+    "fr": "Bitume",
+    "eng": "Bitumen"
+  },
+  "4_Nivôse": {
+    "fr": "Soufre",
+    "eng": "Sulphur"
+  },
+  "5_Nivôse": {
+    "fr": "Chien",
+    "eng": "Dog"
+  },
+  "6_Nivôse": {
+    "fr": "Lave",
+    "eng": "Lava"
+  },
+  "7_Nivôse": {
+    "fr": "Terre végétale",
+    "eng": "Topsoil"
+  },
+  "8_Nivôse": {
+    "fr": "Fumier",
+    "eng": "Manure"
+  },
+  "9_Nivôse": {
+    "fr": "Salpêtre",
+    "eng": "Saltpeter"
+  },
+  "10_Nivôse": {
+    "fr": "Fléau",
+    "eng": "Flail"
+  },
+  "11_Nivôse": {
+    "fr": "Granit",
+    "eng": "Granite"
+  },
+  "12_Nivôse": {
+    "fr": "Argile",
+    "eng": "Clay"
+  },
+  "13_Nivôse": {
+    "fr": "Ardoise",
+    "eng": "Slate"
+  },
+  "14_Nivôse": {
+    "fr": "Grès",
+    "eng": "Sandstone"
+  },
+  "15_Nivôse": {
+    "fr": "Lapin",
+    "eng": "Rabbit"
+  },
+  "16_Nivôse": {
+    "fr": "Silex",
+    "eng": "Flint"
+  },
+  "17_Nivôse": {
+    "fr": "Marne",
+    "eng": "Marl"
+  },
+  "18_Nivôse": {
+    "fr": "Pierre à chaux",
+    "eng": "Limestone"
+  },
+  "19_Nivôse": {
+    "fr": "Marbre",
+    "eng": "Marble"
+  },
+  "20_Nivôse": {
+    "fr": "Van",
+    "eng": "Winnowing fan"
+  },
+  "21_Nivôse": {
+    "fr": "Pierre à plâtre",
+    "eng": "Gypsum"
+  },
+  "22_Nivôse": {
+    "fr": "Sel",
+    "eng": "Salt"
+  },
+  "23_Nivôse": {
+    "fr": "Fer",
+    "eng": "Iron"
+  },
+  "24_Nivôse": {
+    "fr": "Cuivre",
+    "eng": "Copper"
+  },
+  "25_Nivôse": {
+    "fr": "Chat",
+    "eng": "Cat"
+  },
+  "26_Nivôse": {
+    "fr": "Étain",
+    "eng": "Tin"
+  },
+  "27_Nivôse": {
+    "fr": "Plomb",
+    "eng": "Lead"
+  },
+  "28_Nivôse": {
+    "fr": "Zinc",
+    "eng": "Zinc"
+  },
+  "29_Nivôse": {
+    "fr": "Mercure",
+    "eng": "Mercury"
+  },
+  "30_Nivôse": {
+    "fr": "Crible",
+    "eng": "Sieve"
+  },
+  "1_Pluviôse": {
+    "fr": "Lauréole",
+    "eng": "Spurge-laurel"
+  },
+  "2_Pluviôse": {
+    "fr": "Mousse",
+    "eng": "Moss"
+  },
+  "3_Pluviôse": {
+    "fr": "Fragon",
+    "eng": "Butcher's Broom"
+  },
+  "4_Pluviôse": {
+    "fr": "Perce-neige",
+    "eng": "Snowdrop"
+  },
+  "5_Pluviôse": {
+    "fr": "Taureau",
+    "eng": "Bull"
+  },
+  "6_Pluviôse": {
+    "fr": "Laurier-thym",
+    "eng": "Laurustinus"
+  },
+  "7_Pluviôse": {
+    "fr": "Amadouvier",
+    "eng": "Tinder polypore"
+  },
+  "8_Pluviôse": {
+    "fr": "Mézéréon",
+    "eng": "Daphne mezereum"
+  },
+  "9_Pluviôse": {
+    "fr": "Peuplier",
+    "eng": "Poplar"
+  },
+  "10_Pluviôse": {
+    "fr": "Coignée",
+    "eng": "Axe"
+  },
+  "11_Pluviôse": {
+    "fr": "Ellébore",
+    "eng": "Hellebore"
+  },
+  "12_Pluviôse": {
+    "fr": "Brocoli",
+    "eng": "Broccoli"
+  },
+  "13_Pluviôse": {
+    "fr": "Laurier",
+    "eng": "Bay laurel"
+  },
+  "14_Pluviôse": {
+    "fr": "Avelinier",
+    "eng": "Filbert"
+  },
+  "15_Pluviôse": {
+    "fr": "Vache",
+    "eng": "Cow"
+  },
+  "16_Pluviôse": {
+    "fr": "Buis",
+    "eng": "Box Tree"
+  },
+  "17_Pluviôse": {
+    "fr": "Lichen",
+    "eng": "Lichen"
+  },
+  "18_Pluviôse": {
+    "fr": "If",
+    "eng": "Yew tree"
+  },
+  "19_Pluviôse": {
+    "fr": "Pulmonaire",
+    "eng": "Lungwort"
+  },
+  "20_Pluviôse": {
+    "fr": "Serpette",
+    "eng": "Billhook"
+  },
+  "21_Pluviôse": {
+    "fr": "Thlaspi",
+    "eng": "Pennycress"
+  },
+  "22_Pluviôse": {
+    "fr": "Thimelé",
+    "eng": "Rose Daphne"
+  },
+  "23_Pluviôse": {
+    "fr": "Chiendent",
+    "eng": "Couch grass"
+  },
+  "24_Pluviôse": {
+    "fr": "Trainasse",
+    "eng": "Common Knotgrass"
+  },
+  "25_Pluviôse": {
+    "fr": "Lièvre",
+    "eng": "Hare"
+  },
+  "26_Pluviôse": {
+    "fr": "Guède",
+    "eng": "Woad"
+  },
+  "27_Pluviôse": {
+    "fr": "Noisetier",
+    "eng": "Hazel"
+  },
+  "28_Pluviôse": {
+    "fr": "Cyclamen",
+    "eng": "Cyclamen"
+  },
+  "29_Pluviôse": {
+    "fr": "Chélidoine",
+    "eng": "Celandine"
+  },
+  "30_Pluviôse": {
+    "fr": "Traîneau",
+    "eng": "Sleigh"
+  },
+  "1_Ventôse": {
+    "fr": "Tussilage",
+    "eng": "Coltsfoot"
+  },
+  "2_Ventôse": {
+    "fr": "Cornouiller",
+    "eng": "Dogwood"
+  },
+  "3_Ventôse": {
+    "fr": "Violier",
+    "eng": "Matthiola"
+  },
+  "4_Ventôse": {
+    "fr": "Troène",
+    "eng": "Privet"
+  },
+  "5_Ventôse": {
+    "fr": "Bouc",
+    "eng": "Billygoat"
+  },
+  "6_Ventôse": {
+    "fr": "Asaret",
+    "eng": "Wild Ginger"
+  },
+  "7_Ventôse": {
+    "fr": "Alaterne",
+    "eng": "Italian Buckthorn"
+  },
+  "8_Ventôse": {
+    "fr": "Violette",
+    "eng": "Violet"
+  },
+  "9_Ventôse": {
+    "fr": "Marceau",
+    "eng": "Goat Willow"
+  },
+  "10_Ventôse": {
+    "fr": "Bêche",
+    "eng": "Spade"
+  },
+  "11_Ventôse": {
+    "fr": "Narcisse",
+    "eng": "Narcissus"
+  },
+  "12_Ventôse": {
+    "fr": "Orme",
+    "eng": "Elm"
+  },
+  "13_Ventôse": {
+    "fr": "Fumeterre",
+    "eng": "Common fumitory"
+  },
+  "14_Ventôse": {
+    "fr": "Vélar",
+    "eng": "Hedge mustard"
+  },
+  "15_Ventôse": {
+    "fr": "Chèvre",
+    "eng": "Goat"
+  },
+  "16_Ventôse": {
+    "fr": "Épinard",
+    "eng": "Spinach"
+  },
+  "17_Ventôse": {
+    "fr": "Doronic",
+    "eng": "Doronicum"
+  },
+  "18_Ventôse": {
+    "fr": "Mouron",
+    "eng": "Pimpernel"
+  },
+  "19_Ventôse": {
+    "fr": "Cerfeuil",
+    "eng": "Chervil"
+  },
+  "20_Ventôse": {
+    "fr": "Cordeau",
+    "eng": "Twine"
+  },
+  "21_Ventôse": {
+    "fr": "Mandragore",
+    "eng": "Mandrake"
+  },
+  "22_Ventôse": {
+    "fr": "Persil",
+    "eng": "Parsley"
+  },
+  "23_Ventôse": {
+    "fr": "Cochléaria",
+    "eng": "Scurvy-grass"
+  },
+  "24_Ventôse": {
+    "fr": "Pâquerette",
+    "eng": "Daisy"
+  },
+  "25_Ventôse": {
+    "fr": "Thon",
+    "eng": "Tuna"
+  },
+  "26_Ventôse": {
+    "fr": "Pissenlit",
+    "eng": "Dandelion"
+  },
+  "27_Ventôse": {
+    "fr": "Sylvie",
+    "eng": "Wood Anemone"
+  },
+  "28_Ventôse": {
+    "fr": "Capillaire",
+    "eng": "Maidenhair fern"
+  },
+  "29_Ventôse": {
+    "fr": "Frêne",
+    "eng": "Ash tree"
+  },
+  "30_Ventôse": {
+    "fr": "Plantoir",
+    "eng": "Dibber"
+  },
+  "1_Germinal": {
+    "fr": "Primevère",
+    "eng": "Primrose"
+  },
+  "2_Germinal": {
+    "fr": "Platane",
+    "eng": "Plane Tree"
+  },
+  "3_Germinal": {
+    "fr": "Asperge",
+    "eng": "Asparagus"
+  },
+  "4_Germinal": {
+    "fr": "Tulipe",
+    "eng": "Tulip"
+  },
+  "5_Germinal": {
+    "fr": "Poule",
+    "eng": "Hen"
+  },
+  "6_Germinal": {
+    "fr": "Bette",
+    "eng": "Chard"
+  },
+  "7_Germinal": {
+    "fr": "Bouleau",
+    "eng": "Birch"
+  },
+  "8_Germinal": {
+    "fr": "Jonquille",
+    "eng": "Daffodil"
+  },
+  "9_Germinal": {
+    "fr": "Aulne",
+    "eng": "Alder"
+  },
+  "10_Germinal": {
+    "fr": "Couvoir",
+    "eng": "Incubator"
+  },
+  "11_Germinal": {
+    "fr": "Pervenche",
+    "eng": "Periwinkle"
+  },
+  "12_Germinal": {
+    "fr": "Charme",
+    "eng": "Hornbeam"
+  },
+  "13_Germinal": {
+    "fr": "Morille",
+    "eng": "Morel"
+  },
+  "14_Germinal": {
+    "fr": "Hêtre",
+    "eng": "Beech Tree"
+  },
+  "15_Germinal": {
+    "fr": "Abeille",
+    "eng": "Bee"
+  },
+  "16_Germinal": {
+    "fr": "Laitue",
+    "eng": "Lettuce"
+  },
+  "17_Germinal": {
+    "fr": "Mélèze",
+    "eng": "Larch"
+  },
+  "18_Germinal": {
+    "fr": "Ciguë",
+    "eng": "Hemlock"
+  },
+  "19_Germinal": {
+    "fr": "Radis",
+    "eng": "Radish"
+  },
+  "20_Germinal": {
+    "fr": "Ruche",
+    "eng": "Beehive"
+  },
+  "21_Germinal": {
+    "fr": "Gainier",
+    "eng": "Judas tree"
+  },
+  "22_Germinal": {
+    "fr": "Romaine",
+    "eng": "Romaine lettuce"
+  },
+  "23_Germinal": {
+    "fr": "Marronnier",
+    "eng": "Horse chestnut"
+  },
+  "24_Germinal": {
+    "fr": "Roquette",
+    "eng": "Arugula or Rocket"
+  },
+  "25_Germinal": {
+    "fr": "Pigeon",
+    "eng": "Pigeon"
+  },
+  "26_Germinal": {
+    "fr": "Lilas",
+    "eng": "Lilac"
+  },
+  "27_Germinal": {
+    "fr": "Anémone",
+    "eng": "Anemone"
+  },
+  "28_Germinal": {
+    "fr": "Pensée",
+    "eng": "Pansy"
+  },
+  "29_Germinal": {
+    "fr": "Myrtille",
+    "eng": "Bilberry"
+  },
+  "30_Germinal": {
+    "fr": "Greffoir",
+    "eng": "Grafting knife"
+  },
+  "1_Floréal": {
+    "fr": "Rose",
+    "eng": "Rose"
+  },
+  "2_Floréal": {
+    "fr": "Chêne",
+    "eng": "Oak Tree"
+  },
+  "3_Floréal": {
+    "fr": "Fougère",
+    "eng": "Fern"
+  },
+  "4_Floréal": {
+    "fr": "Aubépine",
+    "eng": "Hawthorn"
+  },
+  "5_Floréal": {
+    "fr": "Rossignol",
+    "eng": "Nightingale"
+  },
+  "6_Floréal": {
+    "fr": "Ancolie",
+    "eng": "Common Columbine"
+  },
+  "7_Floréal": {
+    "fr": "Muguet",
+    "eng": "Lily of the valley"
+  },
+  "8_Floréal": {
+    "fr": "Champignon",
+    "eng": "Button mushroom"
+  },
+  "9_Floréal": {
+    "fr": "Hyacinthe",
+    "eng": "Hyacinth"
+  },
+  "10_Floréal": {
+    "fr": "Râteau",
+    "eng": "Rake"
+  },
+  "11_Floréal": {
+    "fr": "Rhubarbe",
+    "eng": "Rhubarb"
+  },
+  "12_Floréal": {
+    "fr": "Sainfoin",
+    "eng": "Sainfoin"
+  },
+  "13_Floréal": {
+    "fr": "Bâton d'or",
+    "eng": "Wallflower"
+  },
+  "14_Floréal": {
+    "fr": "Chamerisier",
+    "eng": "Fan Palm tree"
+  },
+  "15_Floréal": {
+    "fr": "Ver à soie",
+    "eng": "Silkworm"
+  },
+  "16_Floréal": {
+    "fr": "Consoude",
+    "eng": "Comfrey"
+  },
+  "17_Floréal": {
+    "fr": "Pimprenelle",
+    "eng": "Salad burnet"
+  },
+  "18_Floréal": {
+    "fr": "Corbeille d'or",
+    "eng": "Basket of Gold"
+  },
+  "19_Floréal": {
+    "fr": "Arroche",
+    "eng": "Orache"
+  },
+  "20_Floréal": {
+    "fr": "Sarcloir",
+    "eng": "Weeding hoe"
+  },
+  "21_Floréal": {
+    "fr": "Statice",
+    "eng": "Sea thrift"
+  },
+  "22_Floréal": {
+    "fr": "Fritillaire",
+    "eng": "Fritillary"
+  },
+  "23_Floréal": {
+    "fr": "Bourrache",
+    "eng": "Borage"
+  },
+  "24_Floréal": {
+    "fr": "Valériane",
+    "eng": "Valerian"
+  },
+  "25_Floréal": {
+    "fr": "Carpe",
+    "eng": "Carp"
+  },
+  "26_Floréal": {
+    "fr": "Fusain",
+    "eng": "Euonymus"
+  },
+  "27_Floréal": {
+    "fr": "Civette",
+    "eng": "Chives"
+  },
+  "28_Floréal": {
+    "fr": "Buglosse",
+    "eng": "Bugloss"
+  },
+  "29_Floréal": {
+    "fr": "Sénevé",
+    "eng": "White mustard"
+  },
+  "30_Floréal": {
+    "fr": "Houlette",
+    "eng": "Shepherd's crook"
+  },
+  "1_Prairial": {
+    "fr": "Luzerne",
+    "eng": "Lucerne"
+  },
+  "2_Prairial": {
+    "fr": "Hémérocalle",
+    "eng": "Daylily"
+  },
+  "3_Prairial": {
+    "fr": "Trèfle",
+    "eng": "Clover"
+  },
+  "4_Prairial": {
+    "fr": "Angélique",
+    "eng": "Angelica"
+  },
+  "5_Prairial": {
+    "fr": "Canard",
+    "eng": "Duck"
+  },
+  "6_Prairial": {
+    "fr": "Mélisse",
+    "eng": "Lemon balm"
+  },
+  "7_Prairial": {
+    "fr": "Fromental",
+    "eng": "Oat grass"
+  },
+  "8_Prairial": {
+    "fr": "Martagon",
+    "eng": "Martagon lily"
+  },
+  "9_Prairial": {
+    "fr": "Serpolet",
+    "eng": "Wild Thyme"
+  },
+  "10_Prairial": {
+    "fr": "Faux",
+    "eng": "Scythe"
+  },
+  "11_Prairial": {
+    "fr": "Fraise",
+    "eng": "Strawberry"
+  },
+  "12_Prairial": {
+    "fr": "Bétoine",
+    "eng": "Betony"
+  },
+  "13_Prairial": {
+    "fr": "Pois",
+    "eng": "Pea"
+  },
+  "14_Prairial": {
+    "fr": "Acacia",
+    "eng": "Acacia"
+  },
+  "15_Prairial": {
+    "fr": "Caille",
+    "eng": "Quail"
+  },
+  "16_Prairial": {
+    "fr": "Œillet",
+    "eng": "Carnation"
+  },
+  "17_Prairial": {
+    "fr": "Sureau",
+    "eng": "Elderberry"
+  },
+  "18_Prairial": {
+    "fr": "Pavot",
+    "eng": "Poppy plant"
+  },
+  "19_Prairial": {
+    "fr": "Tilleul",
+    "eng": "Linden or Lime tree"
+  },
+  "20_Prairial": {
+    "fr": "Fourche",
+    "eng": "Pitchfork"
+  },
+  "21_Prairial": {
+    "fr": "Barbeau",
+    "eng": "Cornflower"
+  },
+  "22_Prairial": {
+    "fr": "Camomille",
+    "eng": "Camomile"
+  },
+  "23_Prairial": {
+    "fr": "Chèvrefeuille",
+    "eng": "Honeysuckle"
+  },
+  "24_Prairial": {
+    "fr": "Caille-lait",
+    "eng": "Bedstraw"
+  },
+  "25_Prairial": {
+    "fr": "Tanche",
+    "eng": "Tench"
+  },
+  "26_Prairial": {
+    "fr": "Jasmin",
+    "eng": "Jasmine"
+  },
+  "27_Prairial": {
+    "fr": "Verveine",
+    "eng": "Vervain"
+  },
+  "28_Prairial": {
+    "fr": "Thym",
+    "eng": "Thyme"
+  },
+  "29_Prairial": {
+    "fr": "Pivoine",
+    "eng": "Peony"
+  },
+  "30_Prairial": {
+    "fr": "Chariot",
+    "eng": "Handcart"
+  },
+  "1_Messidor": {
+    "fr": "Seigle",
+    "eng": "Rye"
+  },
+  "2_Messidor": {
+    "fr": "Avoine",
+    "eng": "Oat"
+  },
+  "3_Messidor": {
+    "fr": "Oignon",
+    "eng": "Onion"
+  },
+  "4_Messidor": {
+    "fr": "Véronique",
+    "eng": "Speedwell"
+  },
+  "5_Messidor": {
+    "fr": "Mulet",
+    "eng": "Mule"
+  },
+  "6_Messidor": {
+    "fr": "Romarin",
+    "eng": "Rosemary"
+  },
+  "7_Messidor": {
+    "fr": "Concombre",
+    "eng": "Cucumber"
+  },
+  "8_Messidor": {
+    "fr": "Échalote",
+    "eng": "Shallot"
+  },
+  "9_Messidor": {
+    "fr": "Absinthe",
+    "eng": "Wormwood"
+  },
+  "10_Messidor": {
+    "fr": "Faucille",
+    "eng": "Sickle"
+  },
+  "11_Messidor": {
+    "fr": "Coriandre",
+    "eng": "Coriander"
+  },
+  "12_Messidor": {
+    "fr": "Artichaut",
+    "eng": "Artichoke"
+  },
+  "13_Messidor": {
+    "fr": "Girofle",
+    "eng": "Clove"
+  },
+  "14_Messidor": {
+    "fr": "Lavande",
+    "eng": "Lavender"
+  },
+  "15_Messidor": {
+    "fr": "Chamois",
+    "eng": "Chamois"
+  },
+  "16_Messidor": {
+    "fr": "Tabac",
+    "eng": "Tobacco"
+  },
+  "17_Messidor": {
+    "fr": "Groseille",
+    "eng": "Redcurrant"
+  },
+  "18_Messidor": {
+    "fr": "Gesse",
+    "eng": "Hairy Vetchling"
+  },
+  "19_Messidor": {
+    "fr": "Cerise",
+    "eng": "Cherry"
+  },
+  "20_Messidor": {
+    "fr": "Parc",
+    "eng": "Livestock pen"
+  },
+  "21_Messidor": {
+    "fr": "Menthe",
+    "eng": "Mint"
+  },
+  "22_Messidor": {
+    "fr": "Cumin",
+    "eng": "Cumin"
+  },
+  "23_Messidor": {
+    "fr": "Haricot",
+    "eng": "Bean"
+  },
+  "24_Messidor": {
+    "fr": "Orcanète",
+    "eng": "Alkanet"
+  },
+  "25_Messidor": {
+    "fr": "Pintade",
+    "eng": "Guineafowl"
+  },
+  "26_Messidor": {
+    "fr": "Sauge",
+    "eng": "Sage"
+  },
+  "27_Messidor": {
+    "fr": "Ail",
+    "eng": "Garlic"
+  },
+  "28_Messidor": {
+    "fr": "Vesce",
+    "eng": "Tare"
+  },
+  "29_Messidor": {
+    "fr": "Blé",
+    "eng": "Wheat"
+  },
+  "30_Messidor": {
+    "fr": "Chalémie",
+    "eng": "Shawm"
+  },
+  "1_Thermidor": {
+    "fr": "Épeautre",
+    "eng": "Spelt"
+  },
+  "2_Thermidor": {
+    "fr": "Bouillon blanc",
+    "eng": "Common mullein"
+  },
+  "3_Thermidor": {
+    "fr": "Melon",
+    "eng": "Melon"
+  },
+  "4_Thermidor": {
+    "fr": "Ivraie",
+    "eng": "Ryegrass"
+  },
+  "5_Thermidor": {
+    "fr": "Bélier",
+    "eng": "Ram"
+  },
+  "6_Thermidor": {
+    "fr": "Prêle",
+    "eng": "Horsetail"
+  },
+  "7_Thermidor": {
+    "fr": "Armoise",
+    "eng": "Mugwort"
+  },
+  "8_Thermidor": {
+    "fr": "Carthame",
+    "eng": "Safflower"
+  },
+  "9_Thermidor": {
+    "fr": "Mûre",
+    "eng": "Blackberry"
+  },
+  "10_Thermidor": {
+    "fr": "Arrosoir",
+    "eng": "Watering can"
+  },
+  "11_Thermidor": {
+    "fr": "Panic",
+    "eng": "Foxtail millet"
+  },
+  "12_Thermidor": {
+    "fr": "Salicorne",
+    "eng": "Common Glasswort"
+  },
+  "13_Thermidor": {
+    "fr": "Abricot",
+    "eng": "Apricot"
+  },
+  "14_Thermidor": {
+    "fr": "Basilic",
+    "eng": "Basil"
+  },
+  "15_Thermidor": {
+    "fr": "Brebis",
+    "eng": "Ewe"
+  },
+  "16_Thermidor": {
+    "fr": "Guimauve",
+    "eng": "Marshmallow"
+  },
+  "17_Thermidor": {
+    "fr": "Lin",
+    "eng": "Flax"
+  },
+  "18_Thermidor": {
+    "fr": "Amande",
+    "eng": "Almond"
+  },
+  "19_Thermidor": {
+    "fr": "Gentiane",
+    "eng": "Gentian"
+  },
+  "20_Thermidor": {
+    "fr": "Écluse",
+    "eng": "Lock"
+  },
+  "21_Thermidor": {
+    "fr": "Carline",
+    "eng": "Carline thistle"
+  },
+  "22_Thermidor": {
+    "fr": "Câprier",
+    "eng": "Caper"
+  },
+  "23_Thermidor": {
+    "fr": "Lentille",
+    "eng": "Lentil"
+  },
+  "24_Thermidor": {
+    "fr": "Aunée",
+    "eng": "Inula"
+  },
+  "25_Thermidor": {
+    "fr": "Loutre",
+    "eng": "Otter"
+  },
+  "26_Thermidor": {
+    "fr": "Myrte",
+    "eng": "Myrtle"
+  },
+  "27_Thermidor": {
+    "fr": "Colza",
+    "eng": "Rapeseed"
+  },
+  "28_Thermidor": {
+    "fr": "Lupin",
+    "eng": "Lupin"
+  },
+  "29_Thermidor": {
+    "fr": "Coton",
+    "eng": "Cotton"
+  },
+  "30_Thermidor": {
+    "fr": "Moulin",
+    "eng": "Mill"
+  },
+  "1_Fructidor": {
+    "fr": "Prune",
+    "eng": "Plum"
+  },
+  "2_Fructidor": {
+    "fr": "Millet",
+    "eng": "Millet"
+  },
+  "3_Fructidor": {
+    "fr": "Lycoperdon",
+    "eng": "Puffball"
+  },
+  "4_Fructidor": {
+    "fr": "Escourgeon",
+    "eng": "Six-row Barley"
+  },
+  "5_Fructidor": {
+    "fr": "Saumon",
+    "eng": "Salmon"
+  },
+  "6_Fructidor": {
+    "fr": "Tubéreuse",
+    "eng": "Tuberose"
+  },
+  "7_Fructidor": {
+    "fr": "Sucrion",
+    "eng": "Winter Barley"
+  },
+  "8_Fructidor": {
+    "fr": "Apocyn",
+    "eng": "Apocynum"
+  },
+  "9_Fructidor": {
+    "fr": "Réglisse",
+    "eng": "Liquorice"
+  },
+  "10_Fructidor": {
+    "fr": "Échelle",
+    "eng": "Ladder"
+  },
+  "11_Fructidor": {
+    "fr": "Pastèque",
+    "eng": "Watermelon"
+  },
+  "12_Fructidor": {
+    "fr": "Fenouil",
+    "eng": "Fennel"
+  },
+  "13_Fructidor": {
+    "fr": "Épine vinette",
+    "eng": "European Barberry"
+  },
+  "14_Fructidor": {
+    "fr": "Noix",
+    "eng": "Walnut"
+  },
+  "15_Fructidor": {
+    "fr": "Truite",
+    "eng": "Trout"
+  },
+  "16_Fructidor": {
+    "fr": "Citron",
+    "eng": "Lemon"
+  },
+  "17_Fructidor": {
+    "fr": "Cardère",
+    "eng": "Teasel"
+  },
+  "18_Fructidor": {
+    "fr": "Nerprun",
+    "eng": "Buckthorn"
+  },
+  "19_Fructidor": {
+    "fr": "Tagette",
+    "eng": "Mexican Marigold"
+  },
+  "20_Fructidor": {
+    "fr": "Hotte",
+    "eng": "Harvesting basket"
+  },
+  "21_Fructidor": {
+    "fr": "Églantier",
+    "eng": "Wild Rose"
+  },
+  "22_Fructidor": {
+    "fr": "Noisette",
+    "eng": "Hazelnut"
+  },
+  "23_Fructidor": {
+    "fr": "Houblon",
+    "eng": "Hops"
+  },
+  "24_Fructidor": {
+    "fr": "Sorgho",
+    "eng": "Sorghum"
+  },
+  "25_Fructidor": {
+    "fr": "Écrevisse",
+    "eng": "Crayfish"
+  },
+  "26_Fructidor": {
+    "fr": "Bigarade",
+    "eng": "Bitter orange"
+  },
+  "27_Fructidor": {
+    "fr": "Verge d'or",
+    "eng": "Goldenrod"
+  },
+  "28_Fructidor": {
+    "fr": "Maïs",
+    "eng": "Maize or Corn"
+  },
+  "29_Fructidor": {
+    "fr": "Marron",
+    "eng": "Sweet Chestnut"
+  },
+  "30_Fructidor": {
+    "fr": "Panier",
+    "eng": "Pack Basket"
+  }
+}

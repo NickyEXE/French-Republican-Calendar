@@ -24,6 +24,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   late String republicanDate = "Loading...";
   late String decimalTime = "Loading...";
+  late String dedicationFr = "Loading...";
+  late String dedicationEng = "Loading...";
   Timer? _timer;
 
   @override
@@ -60,12 +62,14 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     _timer?.cancel();
   }
 
-  void _loadRepublicanDate() {
+  void _loadRepublicanDate() async {
     DateTime today = DateTime.now();
-    RepublicanDate republicanDateObj = RepublicanDate.fromGregorian(today);
+    RepublicanDate republicanDateObj = await RepublicanDate.fromGregorian(today);
 
     setState(() {
       republicanDate = "${republicanDateObj.getDayName()}, ${republicanDateObj.getDay()} ${republicanDateObj.getMonthName()} ${republicanDateObj.getYearArabic()}";
+      dedicationFr = republicanDateObj.dedicatedToFr;
+      dedicationEng = republicanDateObj.dedicatedToEng;
     });
 
     // Update home screen widget data only on iOS
@@ -113,6 +117,16 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                 decimalTime,
                 style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
+              const SizedBox(height: 20),
+                const Text(
+                "Take some time today to celebrate...",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+              Text(
+                "$dedicationFr ($dedicationEng)",
+                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              )
             ],
           ),
         ),
