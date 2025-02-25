@@ -98,29 +98,29 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                 "Today in the Republican Calendar:",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               Text(
                 republicanDate,
                 style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10),
+              SizedBox(
+                width: 300,
+                height: 300,
+                child: CustomPaint(
+                  painter: RepublicanClockPainter(DecimalTime.fromStandardTime(DateTime.now())),
+                ),
+              ),
+              const SizedBox(height: 10),
               const Text(
-                "Current French Revolutionary Time:",
+                "Current Time:",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10),
               Text(
                 decimalTime,
                 style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 20),
-              SizedBox(
-                width: 200,
-                height: 200,
-                child: CustomPaint(
-                  painter: RepublicanClockPainter(DecimalTime.fromStandardTime(DateTime.now())),
-                ),
-              ),
+              )
             ],
           ),
         ),
