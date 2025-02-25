@@ -23,16 +23,17 @@ class RepublicanClockPainter extends CustomPainter {
       textDirection: TextDirection.ltr,
     );
 
+    const romanNumerals = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'];
     for (int i = 1; i <= 10; i++) {
       final angle = (i * 36) * pi / 180 - pi / 2;
       final offset = Offset(
-        center.dx + cos(angle) * radius * 0.75,
-        center.dy + sin(angle) * radius * 0.75,
+      center.dx + cos(angle) * radius * 0.75,
+      center.dy + sin(angle) * radius * 0.75,
       );
 
       textPainter.text = TextSpan(
-        text: '$i',
-        style: const TextStyle(color: Colors.black, fontSize: 20),
+      text: romanNumerals[i - 1],
+      style: const TextStyle(color: Colors.black, fontSize: 20),
       );
       textPainter.layout();
       textPainter.paint(canvas, offset - Offset(textPainter.width / 2, textPainter.height / 2));
@@ -50,7 +51,8 @@ class RepublicanClockPainter extends CustomPainter {
     }
 
     // Draw hour hand
-    drawHand(canvas, center, radius * 0.5, decimalTime.hour * 36, Colors.black, 6);
+    // The hour hand moves 1/100th of the way around the clock for each minute
+    drawHand(canvas, center, radius * 0.5, ((decimalTime.hour + decimalTime.minute/100)  * 36), Colors.black, 6);
 
     // Draw minute hand
     drawHand(canvas, center, radius * 0.7, decimalTime.minute * 3.6, Colors.red, 4);
