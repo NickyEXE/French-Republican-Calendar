@@ -25,6 +25,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   late String republicanDate = "Loading...";
   late String decimalTime = "Loading...";
+  late String dedicationFr = "Loading...";
+  late String dedicationEng = "Loading...";
   Timer? _timer;
 
   @override
@@ -67,6 +69,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 
     setState(() {
       republicanDate = "${republicanDateObj.getDayName()}, ${republicanDateObj.getDay()} ${republicanDateObj.getMonthName()} ${republicanDateObj.getYearArabic()}";
+      dedicationFr = republicanDateObj.dedicatedToFr;
+      dedicationEng = republicanDateObj.dedicatedToEng;
     });
 
     // Update home screen widget data only on iOS
@@ -95,7 +99,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                "Today in the Republican Calendar:",
+                "Today in the Republican Calendar",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 20),
@@ -113,14 +117,34 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
               ),
               const SizedBox(height: 10),
               const Text(
-                "Current Time:",
+                "Current Time",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10),
               Text(
                 decimalTime,
                 style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              )
+              ),
+              const SizedBox(height: 20),
+              Text(
+                "The day is",
+                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+              Text(
+                dedicationFr,
+                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 20),
+              Text(
+                "Please take some time to reflect on",
+                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+              Text(
+                dedicationEng,
+                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
             ],
           ),
         ),
