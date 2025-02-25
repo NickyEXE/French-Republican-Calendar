@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widgetkit/flutter_widgetkit.dart';
 import 'widgets/republican_calendar_widget.dart';
 import 'decimal_time.dart';
+import 'clock_painter.dart';
 import 'dart:async';
 import 'dart:io' show Platform;
 
@@ -24,8 +25,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   late String republicanDate = "Loading...";
   late String decimalTime = "Loading...";
-  late String dedicationFr = "Loading...";
-  late String dedicationEng = "Loading...";
   Timer? _timer;
 
   @override
@@ -68,8 +67,6 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 
     setState(() {
       republicanDate = "${republicanDateObj.getDayName()}, ${republicanDateObj.getDay()} ${republicanDateObj.getMonthName()} ${republicanDateObj.getYearArabic()}";
-      dedicationFr = republicanDateObj.dedicatedToFr;
-      dedicationEng = republicanDateObj.dedicatedToEng;
     });
 
     // Update home screen widget data only on iOS
@@ -97,7 +94,6 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 10),
               const Text(
                 "Today in the Republican Calendar:",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -118,15 +114,13 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                 style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 20),
-                const Text(
-                "Take some time today to celebrate...",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              SizedBox(
+                width: 200,
+                height: 200,
+                child: CustomPaint(
+                  painter: RepublicanClockPainter(DecimalTime.fromStandardTime(DateTime.now())),
+                ),
               ),
-              const SizedBox(height: 10),
-              Text(
-                "$dedicationFr ($dedicationEng)",
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              )
             ],
           ),
         ),
