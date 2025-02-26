@@ -18,7 +18,8 @@ class RepublicanCalendarTileService : TileService() {
         val republicanDate = RepublicanCalendarWidget().getRepublicanDate(applicationContext, today)
         val (dedication, date, year) = republicanDate.split(" - ")
 
-        qsTile.label = "$date $year"
+        qsTile.label = date
+        qsTile.subtitle = year
         qsTile.state = Tile.STATE_ACTIVE
         qsTile.updateTile()
     }
