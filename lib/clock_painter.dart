@@ -37,7 +37,7 @@ class RepublicanClockPainter extends CustomPainter {
       style: const TextStyle(
         fontFamily: 'Cinzel',
         color: Color(0xFFFFD700),
-        fontSize: 28,
+        fontSize: 20,
         shadows: [
           Shadow(
         offset: Offset(1.5, 1.5),

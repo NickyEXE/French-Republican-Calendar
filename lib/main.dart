@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_widgetkit/flutter_widgetkit.dart';
 import 'widgets/republican_calendar_widget.dart';
 import 'decimal_time.dart';
 import 'clock_painter.dart';
 import 'dart:async';
+import 'dart:convert';
+import 'dart:math';
 import 'dart:io' show Platform;
 
 void main() {
@@ -27,6 +30,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   late String decimalTime = "Loading...";
   late String dedicationFr = "Loading...";
   late String dedicationEng = "Loading...";
+  late String randomQuote = "Loading...";
+  late String quoteAuthor = "Loading...";
   Timer? _timer;
 
   @override
@@ -73,6 +78,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
       dedicationEng = republicanDateObj.dedicatedToEng;
     });
 
+    _loadRandomQuote(republicanDateObj.getDay(), republicanDateObj.getMonthName());
+
     // Update home screen widget data only on iOS
     if (Platform.isIOS) {
       WidgetKit.setItem('republican_date', republicanDate, 'group.com.example');
@@ -86,6 +93,20 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 
     setState(() {
       decimalTime = decimalTimeObj.toString();
+    });
+  }
+
+  void _loadRandomQuote(int day, String month) async {
+    String jsonString = await rootBundle.loadString('assets/quotes.json');
+    List<dynamic> quotes = json.decode(jsonString);
+    int seed = day + month.hashCode;
+    Random random = Random(seed);
+    int randomIndex = random.nextInt(quotes.length);
+    Map<String, dynamic> randomQuoteObj = quotes[randomIndex];
+
+    setState(() {
+      randomQuote = randomQuoteObj['quote'];
+      quoteAuthor = randomQuoteObj['author'];
     });
   }
 
@@ -109,16 +130,11 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
               ),
               const SizedBox(height: 10),
               SizedBox(
-                width: 300,
-                height: 300,
+                width: 200,
+                height: 200,
                 child: CustomPaint(
                   painter: RepublicanClockPainter(DecimalTime.fromStandardTime(DateTime.now())),
                 ),
-              ),
-              const SizedBox(height: 10),
-              const Text(
-                "Current Time",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10),
               Text(
@@ -144,6 +160,25 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
               Text(
                 dedicationEng,
                 style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 20),
+              Text(
+                "Quote of the Day",
+                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Text(
+                  randomQuote,
+                  style: const TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              const SizedBox(height: 10),
+              Text(
+                "- $quoteAuthor",
+                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
             ],
           ),
