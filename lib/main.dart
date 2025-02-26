@@ -114,19 +114,18 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text("French Republican Calendar")),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
                 "Today in the Republican Calendar",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(fontFamily: "Cinzel", fontSize: 18),
               ),
               const SizedBox(height: 20),
               Text(
                 republicanDate,
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontFamily: "Cinzel", fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10),
               SizedBox(
@@ -139,46 +138,41 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
               const SizedBox(height: 10),
               Text(
                 decimalTime,
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontFamily: "Cinzel", fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 20),
               Text(
                 "The day is",
-                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontFamily: "Cinzel", fontSize: 18),
               ),
               const SizedBox(height: 10),
               Text(
                 dedicationFr,
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontFamily: "Cinzel", fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 20),
               Text(
                 "Please take some time to reflect on",
-                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontFamily: "Cinzel", fontSize: 18),
               ),
               const SizedBox(height: 10),
               Text(
                 dedicationEng,
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontFamily: "Cinzel", fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 20),
-              Text(
-                "Quote of the Day",
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Text(
                   randomQuote,
-                  style: const TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
+                  style: const TextStyle(fontFamily: "Cinzel", fontSize: 16, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
                   textAlign: TextAlign.center,
                 ),
               ),
               const SizedBox(height: 10),
               Text(
                 "- $quoteAuthor",
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontFamily: "Cinzel", fontSize: 16, fontWeight: FontWeight.bold),
               ),
             ],
           ),
