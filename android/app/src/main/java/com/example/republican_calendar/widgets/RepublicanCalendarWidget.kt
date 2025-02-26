@@ -30,7 +30,7 @@ class RepublicanCalendarWidget : AppWidgetProvider() {
         }
     }
 
-    private fun getRepublicanDate(context: Context?, today: Calendar): String {
+    public fun getRepublicanDate(context: Context?, today: Calendar): String {
         val republicanYear = calculateRepublicanYear(today)
 
         val start = Calendar.getInstance().apply {
