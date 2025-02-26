@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter/services.dart' show rootBundle, MethodChannel;
 import 'package:flutter_widgetkit/flutter_widgetkit.dart';
 import 'widgets/republican_calendar_widget.dart';
 import 'decimal_time.dart';
@@ -16,6 +16,16 @@ void main() {
     WidgetKit.setItem('republican_date', 'Loading...', 'group.com.example');
     WidgetKit.reloadAllTimelines();
   }
+
+  const MethodChannel('com.example.republican_calendar/republican_date').setMethodCallHandler((call) async {
+    if (call.method == 'getRepublicanDate') {
+      DateTime today = DateTime.now();
+      RepublicanDate republicanDateObj = await RepublicanDate.fromGregorian(today);
+      String republicanDate = "${republicanDateObj.dedicatedToFr} - ${republicanDateObj.getDay()} ${republicanDateObj.getMonthName()} - Year ${republicanDateObj.getYearArabic()}";
+      return republicanDate;
+    }
+    return null;
+  });
 }
 
 class MyApp extends StatefulWidget {
