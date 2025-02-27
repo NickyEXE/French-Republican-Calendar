@@ -17,7 +17,7 @@ class DecimalTime {
     String h = hour.toString();
     String m = minute > 0 ? minute.toString().padLeft(2, '0') : '';
     String s = second > 0 ? second.toString().padLeft(2, '0') : '';
-    return '0,$h$m$s'.replaceAll(RegExp(r'0+$'), '');
+    return '0.$h$m$s'.replaceAll(RegExp(r'0+$'), '');
   }
 
   @override
