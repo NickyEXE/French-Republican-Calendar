@@ -1,11 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="French Republican Calendar"
+        android:label="GuilloTime"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <receiver
             android:name="com.example.republican_calendar.widgets.RepublicanCalendarWidget"
-            android:label="French Republican Calendar"
+            android:label="GuilloTime"
             android:exported="true">
 
             <intent-filter>
