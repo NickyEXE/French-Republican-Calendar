@@ -8,6 +8,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
 import 'dart:io' show Platform;
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const MyApp());
@@ -120,6 +121,15 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     });
   }
 
+  Future<void> _launchURL() async {
+    const url = 'https://ko-fi.com/mvpworldchamp';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -183,6 +193,20 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
               Text(
                 "- $quoteAuthor",
                 style: const TextStyle(fontFamily: "Cinzel", fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 20),
+              GestureDetector(
+                onTap: _launchURL,
+                child: const Text(
+                  "Donate to help get this on the Apple Store.",
+                  style: TextStyle(
+                    fontFamily: "Cinzel",
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFFFFD700),
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
               ),
             ],
           ),
