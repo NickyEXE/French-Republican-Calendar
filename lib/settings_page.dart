@@ -34,7 +34,7 @@ class SettingsPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: const Text(
-              "Consider donating below! If I get enough donations, I'll also take it as a sign to build a WearOS integration, do some other stupid stuff probably, and mostly just keep having fun churning out niche content.",
+              "Consider donating below! If I get enough donations, I'll launch the Apple version and maybe also take it as a sign to build a WearOS integration, do some other stupid stuff probably, and mostly just keep having fun churning out niche content.",
               style: TextStyle(fontSize: 18),
               textAlign: TextAlign.center,
               ),
