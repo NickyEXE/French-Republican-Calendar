@@ -9,6 +9,7 @@ import 'dart:convert';
 import 'dart:math';
 import 'dart:io' show Platform;
 import 'package:url_launcher/url_launcher.dart';
+import 'settings_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -121,96 +122,94 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     });
   }
 
-  Future<void> _launchURL() async {
-    const url = 'https://ko-fi.com/mvpworldchamp';
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                "Today in the Republican Calendar",
-                style: TextStyle(fontFamily: "Cinzel", fontSize: 18),
+      home: Navigator(
+        onGenerateRoute: (RouteSettings settings) {
+          return MaterialPageRoute(
+            builder: (context) => Scaffold(
+              appBar: AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              actions: [
+                IconButton(
+                icon: const Icon(Icons.info_outline),
+                onPressed: () {
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SettingsPage()),
+                  );
+                },
+                ),
+              ],
               ),
-              const SizedBox(height: 20),
-              Text(
-                republicanDate,
-                style: const TextStyle(fontFamily: "Cinzel", fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 10),
-              SizedBox(
-                width: 200,
-                height: 200,
-                child: CustomPaint(
-                  painter: RepublicanClockPainter(DecimalTime.fromStandardTime(DateTime.now())),
+              body: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Today in the Republican Calendar",
+                      style: TextStyle(fontFamily: "Cinzel", fontSize: 18),
+                    ),
+                    const SizedBox(height: 20),
+                    Text(
+                      republicanDate,
+                      style: const TextStyle(fontFamily: "Cinzel", fontSize: 24, fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 10),
+                    SizedBox(
+                      width: 200,
+                      height: 200,
+                      child: CustomPaint(
+                        painter: RepublicanClockPainter(DecimalTime.fromStandardTime(DateTime.now())),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      decimalTime,
+                      style: const TextStyle(fontFamily: "Cinzel", fontSize: 24, fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 20),
+                    Text(
+                      "The day is",
+                      style: const TextStyle(fontFamily: "Cinzel", fontSize: 18),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      dedicationFr,
+                      style: const TextStyle(fontFamily: "Cinzel", fontSize: 24, fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 20),
+                    Text(
+                      "Please take some time to reflect on",
+                      style: const TextStyle(fontFamily: "Cinzel", fontSize: 18),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      dedicationEng,
+                      style: const TextStyle(fontFamily: "Cinzel", fontSize: 24, fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 20),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Text(
+                        randomQuote,
+                        style: const TextStyle(fontFamily: "Cinzel", fontSize: 16, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      "- $quoteAuthor",
+                      style: const TextStyle(fontFamily: "Cinzel", fontSize: 16, fontWeight: FontWeight.bold),
+                    )
+                  ],
                 ),
               ),
-              const SizedBox(height: 10),
-              Text(
-                decimalTime,
-                style: const TextStyle(fontFamily: "Cinzel", fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 20),
-              Text(
-                "The day is",
-                style: const TextStyle(fontFamily: "Cinzel", fontSize: 18),
-              ),
-              const SizedBox(height: 10),
-              Text(
-                dedicationFr,
-                style: const TextStyle(fontFamily: "Cinzel", fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 20),
-              Text(
-                "Please take some time to reflect on",
-                style: const TextStyle(fontFamily: "Cinzel", fontSize: 18),
-              ),
-              const SizedBox(height: 10),
-              Text(
-                dedicationEng,
-                style: const TextStyle(fontFamily: "Cinzel", fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Text(
-                  randomQuote,
-                  style: const TextStyle(fontFamily: "Cinzel", fontSize: 16, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              const SizedBox(height: 10),
-              Text(
-                "- $quoteAuthor",
-                style: const TextStyle(fontFamily: "Cinzel", fontSize: 16, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 20),
-              GestureDetector(
-                onTap: _launchURL,
-                child: const Text(
-                  "Donate to help get this on the Apple Store.",
-                  style: TextStyle(
-                    fontFamily: "Cinzel",
-                    fontSize: 10,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFFFFD700),
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
+            ),
+          );
+        },
       ),
     );
   }
