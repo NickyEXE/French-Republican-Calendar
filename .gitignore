@@ -43,3 +43,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Some utilities I just keep in the root directory hi
+convertToCsv.js
+convertToJSON.js

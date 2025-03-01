@@ -193,17 +193,30 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                     const SizedBox(height: 20),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                      child: Text(
-                        randomQuote,
-                        style: const TextStyle(fontFamily: "Cinzel", fontSize: 16, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
-                        textAlign: TextAlign.center,
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 200, // Adjust height as needed
+                            child: SingleChildScrollView(
+                              child: Column(
+                                children: [
+                                  Text(
+                                    randomQuote,
+                                    style: const TextStyle(fontFamily: "Cinzel", fontSize: 16, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  const SizedBox(height: 10),
+                                  Text(
+                                    "- $quoteAuthor",
+                                    style: const TextStyle(fontFamily: "Cinzel", fontSize: 16, fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    const SizedBox(height: 10),
-                    Text(
-                      "- $quoteAuthor",
-                      style: const TextStyle(fontFamily: "Cinzel", fontSize: 16, fontWeight: FontWeight.bold),
-                    )
                   ],
                 ),
               ),
