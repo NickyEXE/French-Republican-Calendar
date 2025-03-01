@@ -46,6 +46,15 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   late String quoteAuthor = "Loading...";
   Timer? _timer;
   Timer? _midnightTimer;
+  double _sizeForQuote = 0.0;
+
+  final GlobalKey _appBarKey = GlobalKey();
+  final GlobalKey _clockKey = GlobalKey();
+  final GlobalKey _republicanDateKey = GlobalKey();
+  final GlobalKey _decimalTimeKey = GlobalKey();
+  final GlobalKey _dedicationFrKey = GlobalKey();
+  final GlobalKey _dedicationEngKey = GlobalKey();
+  final GlobalKey _dividerKey = GlobalKey();
 
   @override
   void initState() {
@@ -144,23 +153,24 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           return MaterialPageRoute(
             builder: (context) => Scaffold(
               appBar: AppBar(
+                key: _appBarKey,
                 title: Text(
-                      "Today in the Republican Calendar",
-                      style: TextStyle(fontFamily: "Cinzel", fontSize: MediaQuery.of(context).size.height > 700 ? 16.0 : 12.0),
+                  "Today in the Republican Calendar",
+                  style: TextStyle(fontFamily: "Cinzel", fontSize: MediaQuery.of(context).size.height > 700 ? 16.0 : 12.0),
                 ),
                 backgroundColor: Colors.transparent,
                 elevation: 0,
                 actions: [
-                IconButton(
-                icon: const Icon(Icons.info_outline),
-                onPressed: () {
-                  Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SettingsPage()),
-                  );
-                },
-                ),
-              ],
+                  IconButton(
+                    icon: const Icon(Icons.info_outline),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const SettingsPage()),
+                      );
+                    },
+                  ),
+                ],
               ),
               body: LayoutBuilder(
                 builder: (context, constraints) {
@@ -172,52 +182,85 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                   double headingSize = bigScreen ? 20.0 : 14.0;
                   double textSize = bigScreen ? 18.0 : 12.0;
                   double quoteSize = bigScreen ? 14.0 : 12.0;
-                  SizedBox bigDivider = bigScreen ? SizedBox(height: 20) : SizedBox(height: 6);
-                  SizedBox smallDivider = bigScreen ? SizedBox(height: 10) : SizedBox(height: 6);
+                  double bigDividerHeight = bigScreen ? 20 : 6;
+                  double smallDividerHeight = bigScreen ? 10 : 6;
                   double clockSize = bigScreen ? 200 : 140;
 
-                  return Center(
+                  // all of this logic is to calculate the available space for the quote
+                  WidgetsBinding.instance.addPostFrameCallback((_) {
+                    double appBarHeight = _appBarKey.currentContext?.size?.height ?? 0;
+                    double clockHeight = _clockKey.currentContext?.size?.height ?? 0;
+                    double republicanDateHeight = _republicanDateKey.currentContext?.size?.height ?? 0;
+                    double decimalTimeHeight = _decimalTimeKey.currentContext?.size?.height ?? 0;
+                    double dedicationFrHeight = _dedicationFrKey.currentContext?.size?.height ?? 0;
+                    double dedicationEngHeight = _dedicationEngKey.currentContext?.size?.height ?? 0;
+                    double dividerHeight = _dividerKey.currentContext?.size?.height ?? 0;
+
+                    double totalHeight = appBarHeight +
+                        clockHeight +
+                        republicanDateHeight +
+                        decimalTimeHeight +
+                        dedicationFrHeight +
+                        dedicationEngHeight +
+                        dividerHeight +
+                        (4 * smallDividerHeight) +
+                        (2 * bigDividerHeight);
+
+                    double sizeForQuote = constraints.maxHeight - totalHeight;
+
+                    setState(() {
+                      _sizeForQuote = sizeForQuote;
+                    });
+                  });
+
+                  return SingleChildScrollView(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           republicanDate,
+                          key: _republicanDateKey,
                           style: TextStyle(fontFamily: "Cinzel", fontSize: headingSize, fontWeight: FontWeight.bold),
                         ),
-                        smallDivider,
+                        SizedBox(height: smallDividerHeight),
                         SizedBox(
+                          key: _clockKey,
                           width: clockSize,
                           height: clockSize,
                           child: CustomPaint(
                             painter: RepublicanClockPainter(DecimalTime.fromStandardTime(DateTime.now())),
                           ),
                         ),
-                        smallDivider,
+                        SizedBox(height: smallDividerHeight),
                         Text(
                           decimalTime,
+                          key: _decimalTimeKey,
                           style: TextStyle(fontFamily: "Cinzel", fontSize: headingSize, fontWeight: FontWeight.bold),
                         ),
-                        bigDivider,
+                        SizedBox(height: bigDividerHeight),
                         Text(
                           "The day is",
                           style: TextStyle(fontFamily: "Cinzel", fontSize: textSize),
                         ),
-                        smallDivider,
+                        SizedBox(height: smallDividerHeight),
                         Text(
                           dedicationFr,
+                          key: _dedicationFrKey,
                           style: TextStyle(fontFamily: "Cinzel", fontSize: headingSize, fontWeight: FontWeight.bold),
                         ),
-                        bigDivider,
+                        SizedBox(height: bigDividerHeight),
                         Text(
                           "Please take some time to reflect on",
                           style: TextStyle(fontFamily: "Cinzel", fontSize: textSize),
                         ),
-                        smallDivider,
+                        SizedBox(height: smallDividerHeight),
                         Text(
                           dedicationEng,
+                          key: _dedicationEngKey,
                           style: TextStyle(fontFamily: "Cinzel", fontSize: headingSize, fontWeight: FontWeight.bold),
                         ),
-                        const Divider(
+                        Divider(
+                          key: _dividerKey,
                           height: 20,
                           thickness: 2,
                           indent: 20,
@@ -228,7 +271,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                           child: Column(
                             children: [
                               Container(
-                                height: bigScreen ? 200 : 150,
+                                height: _sizeForQuote,
                                 child: SingleChildScrollView(
                                   child: Column(
                                     children: [
@@ -237,7 +280,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                                         style: TextStyle(fontFamily: "Cinzel", fontSize: quoteSize, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
                                         textAlign: TextAlign.center,
                                       ),
-                                      smallDivider,
+                                      SizedBox(height: smallDividerHeight),
                                       Text(
                                         "- $quoteAuthor",
                                         style: TextStyle(fontFamily: "Cinzel", fontSize: quoteSize, fontWeight: FontWeight.bold),
