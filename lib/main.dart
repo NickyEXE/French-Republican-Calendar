@@ -45,6 +45,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   late String randomQuote = "Loading...";
   late String quoteAuthor = "Loading...";
   Timer? _timer;
+  Timer? _midnightTimer;
 
   @override
   void initState() {
@@ -52,12 +53,14 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     WidgetsBinding.instance.addObserver(this);
     _loadRepublicanDate();
     _startTimer();
+    _scheduleMidnightUpdate();
   }
 
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
     _stopTimer();
+    _midnightTimer?.cancel();
     super.dispose();
   }
 
@@ -119,6 +122,17 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     setState(() {
       randomQuote = randomQuoteObj['quote'];
       quoteAuthor = randomQuoteObj['author'];
+    });
+  }
+
+  void _scheduleMidnightUpdate() {
+    DateTime now = DateTime.now();
+    DateTime midnight = DateTime(now.year, now.month, now.day + 1);
+    Duration timeUntilMidnight = midnight.difference(now);
+
+    _midnightTimer = Timer(timeUntilMidnight, () {
+      _loadRepublicanDate();
+      _scheduleMidnightUpdate();
     });
   }
 
