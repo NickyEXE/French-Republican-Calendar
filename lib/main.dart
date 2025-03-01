@@ -138,22 +138,15 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
-    bool bigScreen = MediaQuery.of(context).size.height > 700;
-    double headingSize = bigScreen ? 20.0 : 14.0;
-    double textSize = bigScreen ? 18.0 : 12.0;
-    double quoteSize = bigScreen ? 14.0 : 12.0;
-    SizedBox bigDivider = bigScreen ? SizedBox(height: 20) : SizedBox(height: 6);
-    SizedBox smallDivider = bigScreen ? SizedBox(height: 10) : SizedBox(height: 6);
-    double clockSize = bigScreen ? 200 : 140;
     return MaterialApp(
       home: Navigator(
         onGenerateRoute: (RouteSettings settings) {
           return MaterialPageRoute(
             builder: (context) => Scaffold(
-                appBar: AppBar(
+              appBar: AppBar(
                 title: Text(
                       "Today in the Republican Calendar",
-                      style: TextStyle(fontFamily: "Cinzel", fontSize: bigScreen ? 16.0 : 12.0),
+                      style: TextStyle(fontFamily: "Cinzel", fontSize: MediaQuery.of(context).size.height > 700 ? 16.0 : 12.0),
                 ),
                 backgroundColor: Colors.transparent,
                 elevation: 0,
@@ -169,81 +162,97 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                 ),
               ],
               ),
-              body: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      republicanDate,
-                      style: TextStyle(fontFamily: "Cinzel", fontSize: headingSize, fontWeight: FontWeight.bold),
-                    ),
-                    smallDivider,
-                    SizedBox(
-                      width: clockSize,
-                      height: clockSize,
-                      child: CustomPaint(
-                        painter: RepublicanClockPainter(DecimalTime.fromStandardTime(DateTime.now())),
-                      ),
-                    ),
-                    smallDivider,
-                    Text(
-                      decimalTime,
-                      style: TextStyle(fontFamily: "Cinzel", fontSize: headingSize, fontWeight: FontWeight.bold),
-                    ),
-                    bigDivider,
-                    Text(
-                      "The day is",
-                      style: TextStyle(fontFamily: "Cinzel", fontSize: textSize),
-                    ),
-                    smallDivider,
-                    Text(
-                      dedicationFr,
-                      style: TextStyle(fontFamily: "Cinzel", fontSize: headingSize, fontWeight: FontWeight.bold),
-                    ),
-                    bigDivider,
-                    Text(
-                      "Please take some time to reflect on",
-                      style: TextStyle(fontFamily: "Cinzel", fontSize: textSize),
-                    ),
-                    smallDivider,
-                    Text(
-                      dedicationEng,
-                      style: TextStyle(fontFamily: "Cinzel", fontSize: headingSize, fontWeight: FontWeight.bold),
-                    ),
-                    const Divider(
-                      height: 20,
-                      thickness: 2,
-                      indent: 20,
-                      endIndent: 20,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                      child: Column(
-                        children: [
-                          Container(
-                            height: bigScreen ? 200 : 150,
-                            child: SingleChildScrollView(
-                              child: Column(
-                                children: [
-                                  Text(
-                                    randomQuote,
-                                    style: TextStyle(fontFamily: "Cinzel", fontSize: quoteSize, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  smallDivider,
-                                  Text(
-                                    "- $quoteAuthor",
-                                    style: TextStyle(fontFamily: "Cinzel", fontSize: quoteSize, fontWeight: FontWeight.bold),
-                                  ),
-                                ],
-                              ),
-                            ),
+              body: LayoutBuilder(
+                builder: (context, constraints) {
+                  if (constraints.maxHeight == 0) {
+                    return Container(); // Return an empty container if height is 0
+                  }
+
+                  bool bigScreen = constraints.maxHeight > 700;
+                  double headingSize = bigScreen ? 20.0 : 14.0;
+                  double textSize = bigScreen ? 18.0 : 12.0;
+                  double quoteSize = bigScreen ? 14.0 : 12.0;
+                  SizedBox bigDivider = bigScreen ? SizedBox(height: 20) : SizedBox(height: 6);
+                  SizedBox smallDivider = bigScreen ? SizedBox(height: 10) : SizedBox(height: 6);
+                  double clockSize = bigScreen ? 200 : 140;
+
+                  return Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          republicanDate,
+                          style: TextStyle(fontFamily: "Cinzel", fontSize: headingSize, fontWeight: FontWeight.bold),
+                        ),
+                        smallDivider,
+                        SizedBox(
+                          width: clockSize,
+                          height: clockSize,
+                          child: CustomPaint(
+                            painter: RepublicanClockPainter(DecimalTime.fromStandardTime(DateTime.now())),
                           ),
-                        ],
-                      ),
+                        ),
+                        smallDivider,
+                        Text(
+                          decimalTime,
+                          style: TextStyle(fontFamily: "Cinzel", fontSize: headingSize, fontWeight: FontWeight.bold),
+                        ),
+                        bigDivider,
+                        Text(
+                          "The day is",
+                          style: TextStyle(fontFamily: "Cinzel", fontSize: textSize),
+                        ),
+                        smallDivider,
+                        Text(
+                          dedicationFr,
+                          style: TextStyle(fontFamily: "Cinzel", fontSize: headingSize, fontWeight: FontWeight.bold),
+                        ),
+                        bigDivider,
+                        Text(
+                          "Please take some time to reflect on",
+                          style: TextStyle(fontFamily: "Cinzel", fontSize: textSize),
+                        ),
+                        smallDivider,
+                        Text(
+                          dedicationEng,
+                          style: TextStyle(fontFamily: "Cinzel", fontSize: headingSize, fontWeight: FontWeight.bold),
+                        ),
+                        const Divider(
+                          height: 20,
+                          thickness: 2,
+                          indent: 20,
+                          endIndent: 20,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                          child: Column(
+                            children: [
+                              Container(
+                                height: bigScreen ? 200 : 150,
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        randomQuote,
+                                        style: TextStyle(fontFamily: "Cinzel", fontSize: quoteSize, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      smallDivider,
+                                      Text(
+                                        "- $quoteAuthor",
+                                        style: TextStyle(fontFamily: "Cinzel", fontSize: quoteSize, fontWeight: FontWeight.bold),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  );
+                },
               ),
             ),
           );
