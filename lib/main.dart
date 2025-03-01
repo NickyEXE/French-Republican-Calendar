@@ -124,15 +124,26 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
+    bool bigScreen = MediaQuery.of(context).size.height > 700;
+    print("Screen width: ${MediaQuery.of(context).size.height}, bigScreen: $bigScreen");
+    double headingSize = bigScreen ? 20.0 : 14.0;
+    double textSize = bigScreen ? 16.0 : 12.0;
+    SizedBox bigDivider = bigScreen ? SizedBox(height: 16) : SizedBox(height: 6);
+    SizedBox smallDivider = bigScreen ? SizedBox(height: 12) : SizedBox(height: 6);
+    double clockSize = 200;
     return MaterialApp(
       home: Navigator(
         onGenerateRoute: (RouteSettings settings) {
           return MaterialPageRoute(
             builder: (context) => Scaffold(
-              appBar: AppBar(
-              backgroundColor: Colors.transparent,
-              elevation: 0,
-              actions: [
+                appBar: AppBar(
+                title: Text(
+                      "Today in the Republican Calendar",
+                      style: TextStyle(fontFamily: "Cinzel", fontSize: textSize),
+                ),
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                actions: [
                 IconButton(
                 icon: const Icon(Icons.info_outline),
                 onPressed: () {
@@ -148,67 +159,67 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
-                      "Today in the Republican Calendar",
-                      style: TextStyle(fontFamily: "Cinzel", fontSize: 18),
-                    ),
-                    const SizedBox(height: 20),
                     Text(
                       republicanDate,
-                      style: const TextStyle(fontFamily: "Cinzel", fontSize: 24, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontFamily: "Cinzel", fontSize: headingSize, fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(height: 10),
+                    smallDivider,
                     SizedBox(
-                      width: 200,
-                      height: 200,
+                      width: clockSize,
+                      height: clockSize,
                       child: CustomPaint(
                         painter: RepublicanClockPainter(DecimalTime.fromStandardTime(DateTime.now())),
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    smallDivider,
                     Text(
                       decimalTime,
-                      style: const TextStyle(fontFamily: "Cinzel", fontSize: 24, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontFamily: "Cinzel", fontSize: headingSize, fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(height: 20),
+                    bigDivider,
                     Text(
                       "The day is",
-                      style: const TextStyle(fontFamily: "Cinzel", fontSize: 18),
+                      style: TextStyle(fontFamily: "Cinzel", fontSize: textSize),
                     ),
-                    const SizedBox(height: 10),
+                    smallDivider,
                     Text(
                       dedicationFr,
-                      style: const TextStyle(fontFamily: "Cinzel", fontSize: 24, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontFamily: "Cinzel", fontSize: headingSize, fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(height: 20),
+                    bigDivider,
                     Text(
                       "Please take some time to reflect on",
-                      style: const TextStyle(fontFamily: "Cinzel", fontSize: 18),
+                      style: TextStyle(fontFamily: "Cinzel", fontSize: textSize),
                     ),
-                    const SizedBox(height: 10),
+                    smallDivider,
                     Text(
                       dedicationEng,
-                      style: const TextStyle(fontFamily: "Cinzel", fontSize: 24, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontFamily: "Cinzel", fontSize: headingSize, fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(height: 20),
+                    const Divider(
+                      height: 20,
+                      thickness: 2,
+                      indent: 20,
+                      endIndent: 20,
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: Column(
                         children: [
                           Container(
-                            height: 200, // Adjust height as needed
+                            height: bigScreen ? 200 : 150,
                             child: SingleChildScrollView(
                               child: Column(
                                 children: [
                                   Text(
                                     randomQuote,
-                                    style: const TextStyle(fontFamily: "Cinzel", fontSize: 16, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
+                                    style: TextStyle(fontFamily: "Cinzel", fontSize: 12, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
                                     textAlign: TextAlign.center,
                                   ),
-                                  const SizedBox(height: 10),
+                                  smallDivider,
                                   Text(
                                     "- $quoteAuthor",
-                                    style: const TextStyle(fontFamily: "Cinzel", fontSize: 16, fontWeight: FontWeight.bold),
+                                    style: TextStyle(fontFamily: "Cinzel", fontSize: 12, fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),

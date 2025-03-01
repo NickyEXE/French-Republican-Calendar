@@ -24,33 +24,34 @@ class RepublicanClockPainter extends CustomPainter {
     );
 
     const romanNumerals = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'];
+    final textSize = size.width < 200 ? 14.0 : 20.0; // Adjust text size based on screen size
     for (int i = 1; i <= 10; i++) {
       final angle = (i * 36) * pi / 180 - pi / 2;
       final distanceFromCenter = 0.75;
       final offset = Offset(
-      center.dx + cos(angle) * radius * distanceFromCenter,
-      center.dy + sin(angle) * radius * distanceFromCenter,
+        center.dx + cos(angle) * radius * distanceFromCenter,
+        center.dy + sin(angle) * radius * distanceFromCenter,
       );
 
       textPainter.text = TextSpan(
-      text: romanNumerals[i - 1],
-      style: const TextStyle(
-        fontFamily: 'Cinzel',
-        color: Color(0xFFFFD700),
-        fontSize: 20,
-        shadows: [
-          Shadow(
-        offset: Offset(1.5, 1.5),
-        blurRadius: 2.0,
-        color: Colors.black54,
-          ),
-          Shadow(
-        offset: Offset(-1.5, -1.5),
-        blurRadius: 2.0,
-        color: Colors.white70,
-          ),
-        ],
-      ),
+        text: romanNumerals[i - 1],
+        style: TextStyle(
+          fontFamily: 'Cinzel',
+          color: Color(0xFFFFD700),
+          fontSize: textSize,
+          shadows: [
+            Shadow(
+              offset: Offset(1.5, 1.5),
+              blurRadius: 2.0,
+              color: Colors.black54,
+            ),
+            Shadow(
+              offset: Offset(-1.5, -1.5),
+              blurRadius: 2.0,
+              color: Colors.white70,
+            ),
+          ],
+        ),
       );
       textPainter.layout();
       textPainter.paint(canvas, offset - Offset(textPainter.width / 2, textPainter.height / 2));
