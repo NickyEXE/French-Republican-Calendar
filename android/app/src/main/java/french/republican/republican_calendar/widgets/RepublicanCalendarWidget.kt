@@ -1,4 +1,4 @@
-package com.example.republican_calendar.widgets
+package french.republican.republican_calendar.widgets
 
 import android.app.AlarmManager
 import android.app.PendingIntent
@@ -11,7 +11,7 @@ import android.content.SharedPreferences
 import android.os.Build
 import android.util.Log
 import android.widget.RemoteViews
-import com.example.republican_calendar.R
+import french.republican.republican_calendar.R
 import org.json.JSONObject
 import java.io.InputStream
 import java.nio.charset.Charset
@@ -21,8 +21,8 @@ import java.util.concurrent.TimeUnit
 class RepublicanCalendarWidget : AppWidgetProvider() {
 
     companion object {
-        private const val PREFS_NAME = "com.example.republican_calendar.widgets.RepublicanCalendarWidget"
-        private const val UPDATE_WIDGET = "com.example.republican_calendar.widgets.UPDATE_WIDGET"
+        private const val PREFS_NAME = "french.republican.republican_calendar.widgets.RepublicanCalendarWidget"
+        private const val UPDATE_WIDGET = "french.republican.republican_calendar.widgets.UPDATE_WIDGET"
         private const val MIDNIGHT_UPDATE_REQUEST_CODE = 101
         private const val TEN_MINUTE_UPDATE_REQUEST_CODE = 102
         private const val UPDATE_INTERVAL_MINUTES = 10L

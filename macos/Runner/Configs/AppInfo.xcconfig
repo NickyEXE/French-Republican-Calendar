@@ -8,7 +8,7 @@
 PRODUCT_NAME = french_republican_calendar
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.frenchRepublicanCalendar
+PRODUCT_BUNDLE_IDENTIFIER = french.republican.frenchRepublicanCalendar
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2025 com.example. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2025 french.republican. All rights reserved.

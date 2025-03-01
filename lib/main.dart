@@ -15,11 +15,11 @@ void main() {
   runApp(const MyApp());
 
   if (Platform.isIOS) {
-    WidgetKit.setItem('republican_date', 'Loading...', 'group.com.example');
+    WidgetKit.setItem('republican_date', 'Loading...', 'group.french.republican');
     WidgetKit.reloadAllTimelines();
   }
 
-  const MethodChannel('com.example.republican_calendar/republican_date').setMethodCallHandler((call) async {
+  const MethodChannel('french.republican.republican_calendar/republican_date').setMethodCallHandler((call) async {
     if (call.method == 'getRepublicanDate') {
       DateTime today = DateTime.now();
       RepublicanDate republicanDateObj = await RepublicanDate.fromGregorian(today);
@@ -106,7 +106,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 
     // Update home screen widget data only on iOS
     if (Platform.isIOS) {
-      WidgetKit.setItem('republican_date', republicanDate, 'group.com.example');
+      WidgetKit.setItem('republican_date', republicanDate, 'group.french.republican');
       WidgetKit.reloadAllTimelines();
     }
   }

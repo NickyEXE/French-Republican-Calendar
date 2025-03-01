@@ -1,11 +1,11 @@
-package com.example.republican_calendar.services
+package french.republican.republican_calendar.services
 
 import android.content.Intent
 import android.service.quicksettings.TileService
 import android.service.quicksettings.Tile
 import android.util.Log
-import com.example.republican_calendar.MainActivity
-import com.example.republican_calendar.widgets.RepublicanCalendarWidget
+import french.republican.republican_calendar.MainActivity
+import french.republican.republican_calendar.widgets.RepublicanCalendarWidget
 import java.util.Calendar
 
 class RepublicanCalendarTileService : TileService() {

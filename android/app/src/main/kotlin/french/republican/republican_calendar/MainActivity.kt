@@ -1,4 +1,4 @@
-package com.example.republican_calendar
+package french.republican.republican_calendar
 
 import io.flutter.embedding.android.FlutterActivity
 

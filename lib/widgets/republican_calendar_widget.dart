@@ -30,7 +30,7 @@ class _RepublicanCalendarWidgetState extends State<RepublicanCalendarWidget> {
     });
 
     // Update home screen widget data
-    WidgetKit.setItem('republican_date', republicanDate, 'group.com.example');
+    WidgetKit.setItem('republican_date', republicanDate, 'group.french.republican');
     WidgetKit.reloadAllTimelines();
   }
 

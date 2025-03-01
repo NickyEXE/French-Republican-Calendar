@@ -2,6 +2,8 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>
 
     <application
         android:label="GuilloTime"
@@ -31,12 +33,12 @@
         </activity>
 
         <receiver
-            android:name="com.example.republican_calendar.widgets.RepublicanCalendarWidget"
+            android:name="french.republican.republican_calendar.widgets.RepublicanCalendarWidget"
             android:label="GuilloTime"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="com.example.republican_calendar.widgets.UPDATE_WIDGET" />
+                <action android:name="french.republican.republican_calendar.widgets.UPDATE_WIDGET" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
@@ -44,7 +46,7 @@
         </receiver>
 
         <service
-            android:name="com.example.republican_calendar.services.RepublicanCalendarTileService"
+            android:name="french.republican.republican_calendar.services.RepublicanCalendarTileService"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
             android:exported="true">
             <intent-filter>
