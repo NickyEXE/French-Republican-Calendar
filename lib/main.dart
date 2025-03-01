@@ -125,12 +125,12 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     bool bigScreen = MediaQuery.of(context).size.height > 700;
-    print("Screen width: ${MediaQuery.of(context).size.height}, bigScreen: $bigScreen");
     double headingSize = bigScreen ? 20.0 : 14.0;
-    double textSize = bigScreen ? 16.0 : 12.0;
-    SizedBox bigDivider = bigScreen ? SizedBox(height: 16) : SizedBox(height: 6);
-    SizedBox smallDivider = bigScreen ? SizedBox(height: 12) : SizedBox(height: 6);
-    double clockSize = 200;
+    double textSize = bigScreen ? 18.0 : 12.0;
+    double quoteSize = bigScreen ? 14.0 : 12.0;
+    SizedBox bigDivider = bigScreen ? SizedBox(height: 20) : SizedBox(height: 6);
+    SizedBox smallDivider = bigScreen ? SizedBox(height: 10) : SizedBox(height: 6);
+    double clockSize = bigScreen ? 200 : 140;
     return MaterialApp(
       home: Navigator(
         onGenerateRoute: (RouteSettings settings) {
@@ -139,7 +139,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                 appBar: AppBar(
                 title: Text(
                       "Today in the Republican Calendar",
-                      style: TextStyle(fontFamily: "Cinzel", fontSize: textSize),
+                      style: TextStyle(fontFamily: "Cinzel", fontSize: bigScreen ? 16.0 : 12.0),
                 ),
                 backgroundColor: Colors.transparent,
                 elevation: 0,
@@ -213,13 +213,13 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                                 children: [
                                   Text(
                                     randomQuote,
-                                    style: TextStyle(fontFamily: "Cinzel", fontSize: 12, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
+                                    style: TextStyle(fontFamily: "Cinzel", fontSize: quoteSize, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
                                     textAlign: TextAlign.center,
                                   ),
                                   smallDivider,
                                   Text(
                                     "- $quoteAuthor",
-                                    style: TextStyle(fontFamily: "Cinzel", fontSize: 12, fontWeight: FontWeight.bold),
+                                    style: TextStyle(fontFamily: "Cinzel", fontSize: quoteSize, fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),
